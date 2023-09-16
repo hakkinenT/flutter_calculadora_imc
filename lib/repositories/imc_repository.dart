@@ -7,7 +7,8 @@ class IMCRepository {
 
   List<IMC> get imcs => _imcs;
 
-  void addIMC(double peso, double altura) {
+  Future<void> addIMC(double peso, double altura) async {
+    await Future.delayed(const Duration(seconds: 2));
     final classificacao = CalculadoraIMC.classificacao(peso, altura);
     final imc = IMC(peso: peso, altura: altura, classificacao: classificacao);
 

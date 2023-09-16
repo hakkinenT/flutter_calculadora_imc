@@ -17,18 +17,20 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-    );
+        borderRadius: BorderRadius.circular(10),
+        borderSide: const BorderSide(color: Colors.purple));
 
     return TextFormField(
       controller: controller,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(10.0),
         hintText: hintText,
         hintStyle: const TextStyle(color: Colors.black38),
         border: border,
         enabledBorder: border,
-        errorBorder: border,
+        errorBorder:
+            border.copyWith(borderSide: const BorderSide(color: Colors.red)),
         focusedBorder: border,
       ),
       validator: validator,

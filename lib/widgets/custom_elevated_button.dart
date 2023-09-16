@@ -4,12 +4,12 @@ class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
     super.key,
     required this.onPressed,
-    required this.label,
+    required this.child,
   });
 
   final VoidCallback onPressed;
 
-  final String label;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class CustomElevatedButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Text(label),
+        child: child,
       ),
     );
   }

@@ -14,4 +14,9 @@ class IMCRepository {
 
     _imcs.add(imc);
   }
+
+  Future<void> removeIMC(IMC imc) async {
+    await Future.delayed(const Duration(seconds: 2));
+    _imcs.remove(imc);
+  }
 }

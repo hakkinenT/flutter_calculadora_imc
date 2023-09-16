@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calculadora_imc/models/imc.dart';
 
 import '../repositories/imc_repository.dart';
 import '../utils/form_field_validation.dart';
@@ -44,6 +45,7 @@ class _IMCPageState extends State<IMCPage> {
                 final imcs = repository.imcs;
                 return IMCItem(
                   imc: imcs[index],
+                  deleteFunction: () => _onDeleteButtonPressed(imcs[index]),
                 );
               }),
     );
@@ -123,6 +125,18 @@ class _IMCPageState extends State<IMCPage> {
         Navigator.pop(context);
       }
     }
+  }
+
+  void _onDeleteButtonPressed(IMC imc) async {
+    setState(() {
+      loading = true;
+    });
+
+    await repository.removeIMC(imc);
+
+    setState(() {
+      loading = false;
+    });
   }
 }
 

@@ -6,9 +6,11 @@ class IMCItem extends StatelessWidget {
   const IMCItem({
     super.key,
     required this.imc,
+    required this.deleteFunction,
   });
 
   final IMC imc;
+  final VoidCallback deleteFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,8 @@ class IMCItem extends StatelessWidget {
           ],
         ),
         isThreeLine: true,
+        trailing: IconButton(
+            onPressed: deleteFunction, icon: const Icon(Icons.delete)),
       ),
     );
   }

@@ -17,8 +17,7 @@ O projeto Calculadora IMC foi desenvolvido durante o **Bootcamp Santander 2023 -
 </p>
 
 ## Demonstração
-
-![IMC](https://github.com/hakkinenT/assets/blob/master/flutter-projects/flutter-calculadora-imc/cadastrar-imc.gif)
+<img src="https://github.com/hakkinenT/assets/blob/master/flutter-projects/flutter-calculadora-imc/cadastrar-imc.gif" alt="homepage" width="270" height="480"/>
 
 ## Funcionalidades
 - Calcular IMC
